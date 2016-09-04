@@ -1,0 +1,35 @@
+{
+  "name": "try-catch-global.js",
+  "version": "1.0.0",
+  "description": "A small tool to automatically wrap your code with custom global exception handler by using the technology of AST",
+  "main": "try-catch-global.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/foio/try-catch-global.js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Global",
+    "Exception",
+    "Handler",
+    "By",
+    "AST"
+  ],
+  "author": "foio",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foio/try-catch-global.js/issues"
+  },
+  "homepage": "https://github.com/foio/try-catch-global.js#readme",
+  "dependencies": {
+    "lodash": "^4.15.0",
+    "q": "^1.4.1",
+    "uglify-js": "^2.7.3"
+  }
+}
