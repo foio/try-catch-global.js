@@ -19,19 +19,17 @@ var globalFuncTryCatch = function (inputCode, errorHandler) {
     //将错误处理函数包裹进入catch中
     tryCatchAST.body[0].bcatch.body[0] = errorHandlerAST;
 
-    //搜集最外层函数
+    //搜集所有函数
     var walker = new UglifyJS.TreeWalker(function (node) {
         if (isASTFunctionNode(node)) {
             topFuncScope.push(node);
-            return true;
         }
     });
     inputAST.walk(walker);
 
-    //对最外层函数进行变换, 添加try catch语句
+    //对函数进行变换, 添加try catch语句
     var transfer = new UglifyJS.TreeTransformer(null,
         function (node) {
-            //只对最外层函数进行处理
             if (isASTFunctionNode(node) && _.includes(topFuncScope, node)) {
                 //函数内部代码搜集
                 var stream = UglifyJS.OutputStream();
